@@ -49,3 +49,8 @@ group :test do
 end
 
 gem "active_model_serializers", "~> 0.10.12"
+
+gem "faker",  "~> 2.18"
+
+# This gem will reset the table id to 1
+gem 'activerecord-reset-pk-sequence'
