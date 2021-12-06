@@ -3,6 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
 import SignUpPage from "./SignUpPage";
 import LoginPage from "./LoginPage";
+import NotFound from "./NotFound";
+import LoginForm from "./LoginForm";
 
 function NavBar() {
   return (
@@ -11,10 +13,13 @@ function NavBar() {
         <HomePage />
       </Route>
       <Route exact path="/login">
-        <LoginPage />
+        <LoginForm />
       </Route>
       <Route exact path="/signup">
         <SignUpPage />
+      </Route>
+      <Route>
+        <NotFound />
       </Route>
     </Switch>
   );

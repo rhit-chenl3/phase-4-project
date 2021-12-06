@@ -14,6 +14,12 @@ export default function LoginForm() {
 
     function handleSubmit(event) {
         event.preventDefault();
+        try {
+            // attempt to log user in the backend
+            alert("Logged in");
+        } catch (e) {
+            alert(e.message);
+        }
     }
 
     return (
@@ -38,9 +44,6 @@ export default function LoginForm() {
             </Form.Group>
             <Button block size="lg" type="submit" disabled={!validateForm()}>
             Login
-            </Button>
-            <Button block size="lg" type="submit" disabled={!validateForm()}>
-            Signup
             </Button>
         </Form>
         </div>
