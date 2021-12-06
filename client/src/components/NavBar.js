@@ -1,13 +1,22 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import HomePage from "./HomePage";
+import SignUpPage from "./SignUpPage";
+import LoginPage from "./LoginPage";
 
 function NavBar() {
   return (
-    <div className='navbar'>
-        <NavLink to='/'>Login </NavLink>
-        <NavLink to='/signup'>Signup </NavLink>
-        
-    </div>
+    <Switch>
+      <Route exact path="/">
+        <HomePage />
+      </Route>
+      <Route exact path="/login">
+        <LoginPage />
+      </Route>
+      <Route exact path="/signup">
+        <SignUpPage />
+      </Route>
+    </Switch>
   );
 }
 
