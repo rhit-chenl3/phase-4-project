@@ -25,7 +25,7 @@
 // export default App;
 
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Routes from './NavBar'
 import Nav from "react-bootstrap/Nav";
@@ -33,29 +33,31 @@ import { LinkContainer } from "react-router-bootstrap";
 import "../App.css";
 
 function App() {
-  return (
+    const [isAuthenticated, userHasAuthenticated] = useState(false);
+
+    return (
     <div className="App container py-3">
-      <Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
+        <Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
         <LinkContainer to="/">
-          <Navbar.Brand className="font-weight-bold text-muted">
+            <Navbar.Brand className="font-weight-bold text-muted">
             Test
-          </Navbar.Brand>
+            </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Nav activeKey={window.location.pathname}>
+            <Nav activeKey={window.location.pathname}>
             <LinkContainer to="/signup">
-              <Nav.Link>Signup</Nav.Link>
+                <Nav.Link>Signup</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/login">
-              <Nav.Link>Login</Nav.Link>
+                <Nav.Link>Login</Nav.Link>
             </LinkContainer>
-          </Nav>
+            </Nav>
         </Navbar.Collapse>
-      </Navbar>
-      <Routes />
+        </Navbar>
+        <Routes />
     </div>
-  );
+    );
 }
 
 export default App;
