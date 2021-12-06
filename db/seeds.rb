@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 Referee.destroy_all
 Team.destroy_all
 Court.destroy_all
@@ -12,24 +6,14 @@ Referee.reset_pk_sequence
 Team.reset_pk_sequence
 Court.reset_pk_sequence
 
-Referee.create!(name: "bobby", rate: 5.0, email: "bob@yahoo.com", phone_number: "8122230816")
-# 10.times do
-#     Referee.create(
-#         name: Faker::Name.name,
-#         rate: rand(50.00..80.00),
-#         email: Faker::Name.name.delete(' ') + "@gmail.com",
-#         phone_number: Faker::PhoneNumber.phone_number
-#     )
+bobby= Referee.create(name: "bobby", rate: 5, email: "bob@yahoo.com", phone_number: "8122230816")
+ale= Referee.create(name: "ale", rate: 60, email: "ale@gmail.com", phone_number: "3030300307")
+will= Referee.create(name: "will", rate: 30, email: "will@gmail.com", phone_number: "2150300307")    
 # end
+bullhogs= Team.create(name: "bullhogs", email: "bullhogs@gmail.com")
+walnuts=Team.create(name: "walnuts", email: "walnuts@gmail.com")
+wonkies= Team.create(name: "wonkies", email: "wonkies@gmail.com")
 
-# 10.times do
-#     Team.create(
-#         name: Faker::Team.name,
-#         email: Faker::Team.name.delete(' ') + "@gmail.com",
-#     )
-# end
-
-# 5.times do
 #     Court.create(
 #         name: Faker::Color.color_name + "court",
 #         location: Faker::Address.community,
